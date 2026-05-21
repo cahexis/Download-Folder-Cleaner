@@ -18,12 +18,15 @@ fold3 = fold0 / "Programs"
 
 
 def on_active():
-    os.chdir(Desktop)
-    os.mkdir(fold0)
-    os.mkdir(fold1)
-    os.mkdir(fold2)
-    os.mkdir(fold3)
-
+    #os.chdir(Desktop)
+    #os.mkdir(fold0)
+    #os.mkdir(fold1)
+    #os.mkdir(fold2)
+    #os.mkdir(fold3)
+    #os.chdir(Downloads)
+    print(os.listdir(Downloads))
+    #grab pdf and docx files
+    
     
 
 def leaving():
