@@ -8,25 +8,29 @@ import shutil
 Downloads = Path.home() / "Downloads"
 Desktop = Path.home() / "Desktop"
 
-#Documents = ["pdf","docx"]
-#Media = ["mp4","png","jpg","mp3","wav"]
-#Programs = ["exe"]
+#Documents = ["pdf","docx", "xlsx"]
+#Media = []"png","jpg"]
+
 fold0 = Path.home() / "Desktop" / "Organized"
 fold1 = fold0 / "Documents"
 fold2 = fold0 / "Media"
-fold3 = fold0 / "Programs"
+
 
 
 def on_active():
-    #os.chdir(Desktop)
-    #os.mkdir(fold0)
-    #os.mkdir(fold1)
-    #os.mkdir(fold2)
-    #os.mkdir(fold3)
-    #os.chdir(Downloads)
-    print(os.listdir(Downloads))
-    #grab pdf and docx files
-    
+    os.chdir(Desktop)
+    os.mkdir(fold0)
+    os.mkdir(fold1)
+    os.mkdir(fold2)
+    os.chdir(Downloads)
+    for file in os.listdir(Downloads):
+        if file.endswith(".pdf") or file.endswith(".docx") or file.endswith(".xlsx"):
+            shutil.move(str(file), str(fold1))
+        if file.endswith(".png") or file.endswith(".jpg"):
+            shutil.move(str(file), str(fold2))
+
+def onFinish():
+    print("done :)")
     
 
 def leaving():
